@@ -7,15 +7,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
+@Table(name = "medico")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "medico")
 public class Medico {
     @Id
-    private Integer edad;
     private String run;
+
+    private Integer edad;
     private Integer telefono;
     private String especialidad;
 }
