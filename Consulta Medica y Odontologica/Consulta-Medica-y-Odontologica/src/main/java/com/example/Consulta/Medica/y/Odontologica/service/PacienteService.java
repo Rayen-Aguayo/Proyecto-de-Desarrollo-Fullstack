@@ -27,6 +27,7 @@ public class PacienteService {
 
     public void delete(String id){
         pacienteRepository.deleteById(id);
+
     }
 
 }
