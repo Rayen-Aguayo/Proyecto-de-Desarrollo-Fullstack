@@ -22,5 +22,5 @@ public class Paciente {
     private String enfermedad;
     private Boolean tomaMedicamento;
     private String cualMedicameto;
-    private Integer nroTeléfono;
+    private Integer nroTelefono;
 }
