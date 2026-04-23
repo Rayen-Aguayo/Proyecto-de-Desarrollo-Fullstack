@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class Paciente {
     @Id
     private String run;
-    
+
     private String datosDelPaciente;
     private Integer edad;
     private String alergias;
@@ -23,5 +23,4 @@ public class Paciente {
     private Boolean tomaMedicamento;
     private String cualMedicameto;
     private Integer nroTeléfono;
-
 }
