@@ -15,15 +15,13 @@ import lombok.NoArgsConstructor;
 public class Paciente {
     @Id
     private String run;
-
+    
     private String datosDelPaciente;
     private Integer edad;
     private String alergias;
     private String enfermedad;
-
     private Boolean tomaMedicamento;
     private String cualMedicameto;
-
     private Integer nroTeléfono;
 
 }
