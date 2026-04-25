@@ -17,7 +17,7 @@ public class Paciente {
     private String run;
 
     private String datosDelPaciente;
-    private Integer edad;
+    private Integer fechaNacimiento;
     private String alergias;
     private String enfermedad;
     private Boolean tomaMedicamento;
