@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.ms_paciente.model.Paciente;
 import com.example.ms_paciente.service.PacienteService;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -52,12 +54,33 @@ public class PacienteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> eliminar(@PathVariable String id) {
-        //TODO: process PUT request
-        
-        return entity;
+    public ResponseEntity<Paciente> actualizar(@PathVariable String id, @RequestBody Paciente paciente) {
+        try{
+            Paciente pac = pacienteService.findById(id);
+            pac.setAlergias(paciente.getAlergias());
+            pac.setCualMedicameto(paciente.getCualMedicameto());
+            pac.setDatosDelPaciente(paciente.getDatosDelPaciente());
+            pac.setEnfermedad(paciente.getEnfermedad());
+            pac.setFechaNacimiento(paciente.getFechaNacimiento());
+            pac.setNroTelefono(paciente.getNroTelefono());
+            pac.setTomaMedicamento(paciente.getTomaMedicamento());
+            return ResponseEntity.ok(paciente);
+        }catch(Exception e){
+            return ResponseEntity.notFound().build();
+        }
     }
     
+    @DeleteMapping("/{id}")
+
+    public ResponseEntity<?> eliminar (@PathVariable String id){
+        try{
+            pacienteService.delete(id);
+            return ResponseEntity.noContent().build();
+        }catch(Exception e){
+            return ResponseEntity.notFound().build();
+        }
+
+    }
     
     
     
