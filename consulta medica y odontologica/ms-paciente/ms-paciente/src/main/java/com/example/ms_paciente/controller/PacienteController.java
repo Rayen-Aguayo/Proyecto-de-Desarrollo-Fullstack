@@ -64,6 +64,7 @@ public class PacienteController {
             pac.setFechaNacimiento(paciente.getFechaNacimiento());
             pac.setNroTelefono(paciente.getNroTelefono());
             pac.setTomaMedicamento(paciente.getTomaMedicamento());
+            pacienteService.save(pac);
             return ResponseEntity.ok(paciente);
         }catch(Exception e){
             return ResponseEntity.notFound().build();
