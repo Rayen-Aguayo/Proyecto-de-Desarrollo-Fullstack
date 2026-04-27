@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PedirHoraDto {
+public class PedirHoraResponseDTO {
 
     private Long id;
     
